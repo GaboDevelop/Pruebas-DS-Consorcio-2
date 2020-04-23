@@ -1,0 +1,50 @@
+#Definicion de los Types
+type Person {
+    id: Int!
+    name: String!
+    lastname: String!
+}
+
+type Course {
+    id: Int!
+    name: String!
+    students: [Person]
+}
+
+#Definición de los Query
+type Query {
+    "Devuelve todas las personas"
+    getPersons: [Person]
+    "Devuelve una persona"
+    getPerson(id: ID!): Person
+    "Devuelve todos los cursos"
+    getCourses: [Course]
+    "Devuelve un curso"
+    getCourse(id: ID!): Course
+}
+
+#Definición de los input
+input PersonInput {
+    name: String!
+    lastname: String!
+}
+
+input CourseInput {
+    name: String!
+}
+
+#Definición de los Mutation
+type Mutation {
+    "Crea una persona"
+    createPerson(input: PersonInput!): Person
+    "Crea un curso"
+    createCourse(input: CourseInput!): Course
+    "Actualiza una persona"
+    updatePerson(id: ID!,input: PersonInput!): Person
+    "Actualiza un curso"
+    updateCourse(id: ID!,input: CourseInput!): Course
+    "Elimina una persona"
+    deletePerson(id: ID!): String
+    "Elimina un curso"
+    deleteCourse(id: ID!): String
+}

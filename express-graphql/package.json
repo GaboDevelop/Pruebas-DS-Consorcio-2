@@ -1,0 +1,28 @@
+{
+  "name": "practica-graphql",
+  "version": "1.0.0",
+  "description": "Practica de implementación básica de GraphQL",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -e js,graphql index",
+    "lint": "standard",
+    "lint-fix": "standard --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "graphql"
+  ],
+  "author": "LuisRF54",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^15.0.0",
+    "graphql-tools": "^5.0.0",
+    "pg": "^8.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3",
+    "standard": "^14.3.3"
+  }
+}
