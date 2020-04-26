@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.form {
+    margin: 20px auto;
+    width: 400px;
+    text-align: center;
+}
+
+.container {
+    margin: 20px auto;
+    width: 350px;
+    background-color: royalblue;
+    border: 2px solid black;
+    /* text-align: center; */
+}
+
+input {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid blue;
+}
+
+.error {
+    display: block;
+}
+
+.qr {
+    padding: 50px;
+    width: 50px;
+}

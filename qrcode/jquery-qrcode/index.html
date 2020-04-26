@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Qr Code</title>
+</head>
+<body>
+    <div class="form">
+        <p>Ingresa una URL y presiona ENTER</p>
+        <br>
+        <input type="text" id="text-url" value="https://www.google.com">
+    </div>
+    <div class="container">
+        <p class="error"></p>
+        <div id="qrcode" class="qr"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

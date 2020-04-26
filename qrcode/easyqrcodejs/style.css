@@ -1,0 +1,23 @@
+
+.form {
+    margin: 20px auto;
+    width: 400px;
+    text-align: center;
+}
+.container {
+    margin: 20px auto;
+    width: 400px;
+    background-color: royalblue;
+    border: 2px solid black;
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid blue;
+}
+
+.qr {
+    padding: 20px;
+}
