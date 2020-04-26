@@ -1,5 +1,13 @@
 const express = require("express");
 const app = express();
+const request = require('request')
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 
 app.get("/", (req, res) => {
   res.send("Estoy en la ruta HOME");
@@ -75,6 +83,29 @@ app.post("/validate-transactions", (req, res) => {
     })
 });
 
+
+// POEDITOR SISTEMA MULTI-IDIOMA PARA MANEJO DE CONTENIDO
+const project_id_poeditor = '335851';
+const token_poeditor = '7594e4bec91ddcd0c945341dfbe92c0e';
+
+app.get("/content", async (req, res) => {
+    const { language } = req.query
+    const request_info = {
+      url: 'https://api.poeditor.com/v2/terms/list',
+      method: 'POST',
+      json: true,
+      body: 'api_token=' + token_poeditor + '&id=' + project_id_poeditor + '&language=' + language,
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+    };
+
+    request(request_info, (err, response) => {
+      if (err) {
+        return res.send(err);
+      }
+      res.send(response.body.result);
+    });
+});
+
 app.get("*", (req, res) => {
   res.send("Estoy en la ruta 404");
 });
@@ -82,3 +113,12 @@ app.get("*", (req, res) => {
 app.listen(3000, () => {
   console.log("El servidor express esta en escucha en el puerto 3000...");
 });
+
+
+
+
+
+
+
+
+
