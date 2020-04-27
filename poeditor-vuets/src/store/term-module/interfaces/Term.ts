@@ -1,6 +1,6 @@
 
 import TermModel from '../models/TermModel';
 
-export interface State{
+export interface ITermModuleState{
     terms: TermModel[];
 }

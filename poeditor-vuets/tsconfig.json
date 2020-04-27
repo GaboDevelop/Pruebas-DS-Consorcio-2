@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "noImplicitAny": false, // se puede cambiar a false
     "target": "esnext",
     "module": "esnext",
     "strict": true,

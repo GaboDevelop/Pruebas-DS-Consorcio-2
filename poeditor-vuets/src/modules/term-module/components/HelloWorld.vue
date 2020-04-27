@@ -30,27 +30,29 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { Action, Getter } from 'vuex-class';
-import TermTypes from '../store/types/TermTypes';
+import { Action, Getter, State } from 'vuex-class';
+import { termModule } from '../../../store/namespaces';
+import TermModel from '../../../store/term-module/models/TermModel';
+import termMethods from '../../../store/term-module/methods/term-methods';
+import { ITermModuleState } from '../../../store/term-module/interfaces/Term';
 
 @Component
 export default class HelloWorld extends Vue {
-  
-  language:string = 'es';
+  language: string = 'es';
 
-  mounted() {
-    this.actionTerm(this.language);
+  async mounted() {
+    await this.actionTerm(this.language);
   }
 
-  @Action(`TermModule/${TermTypes.actions.GET_TERMS_LANGUAGE}`) actionTerm: any;
-
-  @Getter(`TermModule/${TermTypes.getters.GET_TERMS}`) getTerms: any;
-
-  changeLanguage(e:any) {
+  async changeLanguage(e:any) {
     const new_language = e.target.value;
     this.language = new_language;
-    this.actionTerm(new_language);
+    await this.actionTerm(new_language);
   }
+
+  @termModule.State('terms') terms: ITermModuleState['terms'] = [];
+  @termModule.Action(termMethods.actions.GET_TERMS_LANGUAGE) actionTerm;
+  @termModule.Getter(termMethods.getters.GET_TERMS) getTerms;
 }
 </script>
 
