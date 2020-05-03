@@ -1,0 +1,29 @@
+import {
+  BaseEntity,
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  OneToMany,
+} from 'typeorm';
+import { TransactionInterest } from '../transaction_interest/transaction_interest.entity';
+
+@Entity()
+export class ThirdPartyInterest extends BaseEntity {
+  @PrimaryGeneratedColumn()
+  id_third_party_interest: number;
+
+  @Column()
+  name: string;
+
+  @Column({ nullable: true })
+  amount_dollar_cents: number;
+
+  @Column({ nullable: true })
+  percentage: number;
+
+  @Column({ default: () => 'CURRENT_DATE' })
+  initial_date: Date;
+
+  @Column({ nullable: true })
+  final_date: Date;
+}
