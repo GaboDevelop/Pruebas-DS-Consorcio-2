@@ -23,7 +23,7 @@
   "homepage": "https://github.com/platzi/nodejsbasico#readme",
   "dependencies": {
     "@sendgrid/mail": "^7.0.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "cors": "^2.8.5",
     "etherscan-api": "^10.0.5",
     "express": "^4.16.3",
